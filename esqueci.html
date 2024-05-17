@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci a senha</title>
+    <style>
+        html, body {
+            width: 95vw;
+            height: 98vh;
+            position: relative;
+            font: normal 500 27px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            
+        }
+
+        div {
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px black;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+           padding-top: 120px;
+           font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div onmousemove="dentro()" onmouseout="fora()" id="dentro">
+        <h1 id="resp">Se Ferrou!</h1>
+    </div>
+
+    <script>
+        function dentro() {
+            let cor = document.getElementById("dentro");
+            let resp = document.getElementById("resp");
+            cor.style.backgroundColor = "black";
+            resp.innerHTML = "Otário!"
+        }
+
+        function fora() {
+            let corfora = document.getElementById("dentro");
+            let resp = document.getElementById("resp");
+            corfora.style.backgroundColor = "blueviolet";
+            resp.innerHTML = "Se Ferrou!"
+        }
+    </script>
+</body>
+</html>
