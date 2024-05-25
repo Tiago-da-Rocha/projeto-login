@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* CONFIGURAÇÕES MEDIA QUERIES */
+
+
+/* VARIÁVEIS DO SITE(cores) */
+
+:root {
+    --cor0: #A26727;  
+    --cor1: #481D13;
+    --cor2: #261916;
+    --cor3: #603f1b;
+    --cor4: #dbb48d;
+    --cor5: #efb274;
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    section {
+        width: 80vw;
+        height: 280px;
+    }
+
+    section > div#img {
+        background-image: url(../imagens/img-tablet.jpg);
+        width: 30%;
+        height: 100%;
+        float: left;
+    }
+
+    div#form {
+        width: 70%;
+        height: 100%;
+        float: right;
+    }
+}
+
+/* DESKTOPS E MAIS */
+
+@media screen and (min-width: 992px) {
+    section {
+        width: 950px;
+        height: 350px;
+    }
+    
+    section > div#img {
+        background-image: url(../imagens/img-desktop.jpg);
+        height: 100%;
+        width: 50%;
+        float: right;
+    }
+
+    section > div#form {
+        font-size: 1.2em;
+        height: 100%;
+        width: 50%;
+        float: left;
+    }
+
+    div > h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    div > p#text {
+        font-size: 16px;
+        padding: 14px 0px;
+    }
+
+    /* E-MAIL E SENHA */
+
+    div.campo > span {
+        font-size: 1.8em;
+
+        transform: translateY(-3px);
+    }
+
+    div.campo > input {
+        width: calc(100% - 45.5px);
+        transform: translateY(-13px);
+    }
+
+    div.campo > input#idsenha {
+        transform: translateY(-12.8px);
+    }
+
+    /* ESQUECI A SENHA */
+
+    a#esqsen {
+        padding-top: 4.5px;
+    }
+}

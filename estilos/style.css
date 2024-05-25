@@ -1,9 +1,18 @@
 @charset "UTF-8";
 
+/* CONFIGURAÇÕES ESTILOS GERAIS(first mobile) */
+
+
+/* REGRAS DO SITE */
+
 * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
+
+/* VARIÁVEIS DO SITE(cores) */
 
 :root {
     --cor0: #A26727;  
@@ -14,158 +23,143 @@
     --cor5: #efb274;
 }
 
-html, body {
-    background-color: var(--cor1);
-    background-attachment: fixed;
-    font: normal 500 13px Arial;
+/* CONFIGURAÇÕES DO CORPO SITE */
+
+body, html {
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor2));
+    width: 100vw;
+    height: 100vh;
+}
+
+/* CONTAINER DO CONTEÚDO DO SITE */
+
+main {
     position: relative;
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
 }
 
 section {
+    background-color: white;
     border-radius: 20px;
     width: 250px;
-
+    height: 515px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.556);
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: width 0.3s, heigth 0.3s;
+    transition-timing-function: ease;
 }
 
-div#img {
-    background: var(--cor1) url(../imagens/img-celular.jpg) no-repeat;
+/* CONTEÚDO DO SITE: */
+
+
+/* IMAGEM DO SITE */
+
+section > div#img {
+    background: var(--cor0) url(../imagens/img-celular.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
-    width: 250px;
-    height: 205px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    height: 200px;
+    display: block;
 }
 
-div#form {
-    background-color: white;
-    margin: auto;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: center;
+/* ANTES DO FORMULÁRIO DO SITE */
+
+section > div#form {
     padding: 10px;
-    height: 310px;
+    display: block;
 }
 
-div > h1 {
-    font-size: 24px;
-    padding-bottom: 10px;
+div#form > h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-div > p#text {
-    text-align: left;
-    line-height: 16px;
+div#form > p {
+    font-size: 0.8em;
 }
 
-p {
-    margin: 5px 0px;
+/* FORMULÁRIO DO SITE */
+
+form > div.campo {
+    background-color: var(--cor1);
+    height: 40px;
+    width: 100%;
+    display: block;
     border-radius: 8px;
+    margin: 5px 0px;
+    border: 2px solid var(--cor1);
 }
 
-input {
-    background-color: var(--cor4);
-    border: 1px solid black;
-    font-size: 15px;
-}
+/* E-MAIL E SENHA */
 
-span {
+div.campo > span {
     color: white;
-}
-
-div p#email {
-    background-color: var(--cor1);
-    height: 40px;
-    width: 230px;
-    position: relative;
-    border: 1px solid black;
-}
-
-span#account {
-    font-size: 30px;
-    padding-top: 6px;
-
-    position: absolute;
-    top: 44%;
-    left: 8%;
-    transform: translate(-50%, -50%);
-}
-
-input#idemail {
-    height: 26px;
-    width: 180px;
-    border-radius: 10px;
+    font-size: 2em;
+    width: 40px;
     padding: 5px;
+
+    transform: translateY(-2px);
+}
+
+div.campo > input {
+    background-color: var(--cor4);
     border: 0px;
+    font-size: 1em;
+    height: 100%;
+    width: calc(100% - 44.5px);
+    padding: 4px;
+    border-radius: 8px;
 
-    position: absolute;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-12px);
 }
 
-div p#senha {
-    background-color: var(--cor1);
-    height: 40px;
-    width: 230px;
-    position: relative;
-    border: 1px solid black;
+div.campo > input:focus-within {
+    background-color: white;
 }
 
-span#key {
-    font-size: 30px;
-    padding-top: 6px;
-
-    position: absolute;
-    top: 44%;
-    left: 8%;
-    transform: translate(-50%, -50%);
+label {
+    display: none;
 }
 
-input#idsenha {
-    height: 26px;
-    width: 180px;
-    border-radius: 10px;
-    padding: 5px;
-    border: 0px;
-
-    position: absolute;
-    top: 50%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-}
+/* BOTÃO 'ENTRAR' */
 
 input#entrar {
     background-color: var(--cor0);
     color: white;
-    font-size: 16px;
-    width: 230px;
+    font-size: 1em;
+    width: 100%;
     height: 38px;
+    display: block;
     border-radius: 8px;
     cursor: pointer;
+    border: none;
 }
 
 input#entrar:hover {
     background-color: var(--cor3);
 }
 
-a#esqsen {
-    display: block;
-    color: var(--cor3);
-    font-size: 16px;
-    text-decoration: none;
+/* BOTÃO 'ESQUECI A SENHA' */
 
-    background-color: white; 
+a#esqsen {
+    background-color: white;
+    color: var(--cor3);
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
     border-radius: 8px;
     border: 1px solid var(--cor0);
-    height: 26px;
+    height: 39px;
     cursor: pointer;
-    padding-top: 10px;
+    padding-top: 6px;
+    margin-top: 5px;
 }
 
 a#esqsen:hover {
